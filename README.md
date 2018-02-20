@@ -1,34 +1,42 @@
-![Helectron Logo](/icon.ico) Helectron
+<img src="./build/icon.png" width="64" height="64" alt="Helectron">
+Helectron
 ===
-
 System Info Viewer
 
-### Feature
+## Feature
 
 Current:
 - OS Viewer
 - CPU basic Info
 - Network Info
 
-### Build
+## Build
 
-#### Prerequisite
+### Prerequisite
 - electron
 - electron-builder (if you want to package)
 
-#### Install
+### Install
 ```
 npm install
 ```
 
-#### Run locally
+### Run locally
 ```
 npm start
 ```
-#### Package
+### Package
 ```
 npm run dist
 ```
 
-### Download
-Go to **release**
+## Download
+For binaries, please go to **release**
+
+
+## Credit
+Created by
+<a href="mailto:ntddebugger@gmail.com">Nguyen Tuan Dung</a>
+<span>(Github: @dungwinux)</span>
+
+<a href="https://icons8.com">Icon pack by Icons8</a>
