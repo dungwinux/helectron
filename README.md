@@ -1,7 +1,5 @@
-<img src="./build/icon.png" width="64" height="64" alt="Helectron">
-Helectron
+<img src="./build/icon.png" width="64" height="64" alt="Helectron"> Helectron
 ===
-
 System Info Viewer
 
 ## Feature
@@ -15,7 +13,7 @@ Current:
 
 ### Prerequisite
 - electron
-- electron-builder (if you want to package)
+- electron-builder
 
 ### Install
 ```
