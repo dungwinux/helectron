@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Helectron</title>
+</head>
+
+<body style="text-align: center">
+    <img src="./build/icon.png" width="64" height="64" alt="Helectron">
+    <h1>Helectron</h1>
+    <h3>Version 0.2.0</h3>
+    <div>
+        Created by
+        <a href="mailto:ntddebugger@gmail.com">Nguyen Tuan Dung</a> 
+        <br>
+        <span>(Github: @dungwinux)</span>
+        <br>
+        <a href="https://icons8.com">Icon pack by Icons8</a>
+        <br>
+        Current Dir: <script>document.write(process.cwd())</script>
+        <br>
+        <div>
+            <script>
+                let ver = process.versions
+                for (let i = 0; i < Object.values(ver).length; i++)
+                {
+                    var verl = Object.entries(ver)[i]
+                    document.write(verl[0] + "&nbsp" + verl[1] + "<br>")
+                }
+            </script>
+        </div>
+        <br>
+        <button onclick="window.close()">OK</button>
+    </div>
+    
+</body>
+
+</html>
