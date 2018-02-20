@@ -12,7 +12,7 @@ function createWindow() {
         show: false
     })
     win.loadURL(url.format({
-        pathname: path.join(__dirname, 'index.html'),
+        pathname: path.join(__dirname, 'asset/index/index.html'),
         protocol: 'file:',
         slashes: true
     }))
@@ -73,7 +73,7 @@ const mainMenuTemplate = [
                         parent: win
                     })
                     about.loadURL(url.format({
-                        pathname: path.join(__dirname, 'about.html'),
+                        pathname: path.join(__dirname, 'asset/about/about.html'),
                         protocol: 'file:',
                         slashes: true
                     }))
