@@ -9,22 +9,23 @@ Current:
 - CPU basic Info
 - Network Info
 
-## Build
+## Installing
 
 ### Prerequisite
 - electron
 - electron-builder
 
-### Install
+### Get Package
 ```
 npm install
 ```
 
-### Run locally
+### Run
 ```
 npm start
 ```
-### Package
+
+### Build
 ```
 npm run dist
 ```
