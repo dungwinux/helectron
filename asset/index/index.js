@@ -24,7 +24,7 @@ function PrintNetworkInterface() {
             document.write("<ul>")
             for (let des = 0; des < Object.values(add).length; des++)
                 if (Object.entries(add)[des][0] !== 'family')
-                    document.write("<li>" + Object.entries(add)[des][0] + ":" + "<span>" + Object.entries(add)[des][1] + "</span>" + "</li>")
+                    document.write("<li>" + "<b>" + Object.entries(add)[des][0] + "</b>" + ":&nbsp;<span>" + Object.entries(add)[des][1] + "</span>" + "</li>")
             document.write("</ul>")
         }
     }
