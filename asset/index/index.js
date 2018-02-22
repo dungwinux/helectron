@@ -21,9 +21,11 @@ function PrintNetworkInterface() {
         for (let a = 0; a < infconf.length; a++) {
             add = infconf[a]
             document.write("<h4>" + add.family + "</h4>")
+            document.write("<ul>")
             for (let des = 0; des < Object.values(add).length; des++)
                 if (Object.entries(add)[des][0] !== 'family')
-                    document.write(Object.entries(add)[des][0] + ":" + "&nbsp" + Object.entries(add)[des][1] + "<br>")
+                    document.write("<li>" + Object.entries(add)[des][0] + ":" + "<span>" + Object.entries(add)[des][1] + "</span>" + "</li>")
+            document.write("</ul>")
         }
     }
     console.log("Done")

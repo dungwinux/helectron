@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <title>Helectron</title>
+    <script src="./about.js"></script>
 </head>
 
 <body style="text-align: center">
@@ -18,18 +19,13 @@
         <br>
         <a href="https://icons8.com">Icon pack by Icons8</a>
         <br>
-        Current Dir: <script>document.write(process.cwd())</script>
+        <b>Current Dir:</b>
+        <script>document.write("<span>" + process.cwd() + "</span>")</script>
         <br>
-        <div>
-            <script>
-                let ver = process.versions
-                for (let i = 0; i < Object.values(ver).length; i++)
-                {
-                    var verl = Object.entries(ver)[i]
-                    document.write(verl[0] + "&nbsp" + verl[1] + "<br>")
-                }
-            </script>
-        </div>
+        <b>Versions:</b>
+        <script>
+            PrintLib()
+        </script>
         <br>
         <button onclick="window.close()">OK</button>
     </div>
