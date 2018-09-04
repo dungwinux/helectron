@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Helectron</title>
+    <script src="./index.js"></script>
+    <script src="./script.js" defer></script>
+</head>
+<body>
+    <h1 style="text-align: center">
+        Hello
+        <span id="username"></span>
+    </h1>
+    <h2>
+        System:
+    </h2>
+    <ul>
+        <li>
+            <b>OS</b>:
+            <span id="ostype"></span>
+            <span id="release"></span>
+        </li>
+    </ul>
+    <h2>
+        CPU:
+    </h2>
+    <ul>
+        <li>
+            <b>Model</b>:
+            <span id="cpuModel"></span>
+        </li>
+        <li>
+            <b>Base Speed</b>:
+            <span id="cpuSpeed"></span>
+            Mhz
+        </li>
+        <li>
+            <b>Number of threads</b>:
+            <span id="cpuCores"></span>
+        </li>
+        <li>
+            <b>Architecture</b>:
+            <span id="cpuArch"></span>
+        </li>
+    </ul>
+    <h2>Network:</h2>
+    <script>
+        PrintNetworkInterface()
+    </script>
+</body>
+</html>

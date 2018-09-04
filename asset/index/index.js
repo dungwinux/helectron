@@ -1,6 +1,6 @@
 const os = require('os')
 
-const userName = os.hostname()
+const hostName = os.hostname()
 
 const sysOs = os.type()
 const sysRelease = os.release()

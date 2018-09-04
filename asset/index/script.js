@@ -1,4 +1,4 @@
-document.getElementById("username").innerHTML = userName
+document.getElementById("hostname").innerHTML = hostName
 
 document.getElementById("ostype").innerHTML = sysOs
 document.getElementById("release").innerHTML = sysRelease

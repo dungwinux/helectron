@@ -31,5 +31,8 @@
             "icon": "build/icon.png",
             "category": "Utility"
         }
+    },
+    "dependencies": {
+        "npm-check-updates": "^2.14.2"
     }
 }

@@ -1,0 +1,22 @@
+html {
+    font-family: sans-serif;
+    background-color: cadetblue;
+}
+
+body {
+    margin: 0px;
+}
+
+#name {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 20px;
+    color: yellow;
+    background-color: #6200EA;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card {
+    display: inline-block;
+    border: 1px solid red;
+}
