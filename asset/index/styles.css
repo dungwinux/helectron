@@ -3,6 +3,12 @@ html {
     background-color: cadetblue;
 }
 
+.code {
+    font-family: 'Roboto Mono', monospace;
+    color: #e60d0d;
+    background-color: #ffa0a0;
+}
+
 body {
     margin: 0px;
 }
