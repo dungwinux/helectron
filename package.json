@@ -31,5 +31,8 @@
             "icon": "build/icon.png",
             "category": "Utility"
         }
+    },
+    "dependencies": {
+        "ajv": "^6.5.3"
     }
 }
