@@ -6,7 +6,7 @@ html {
 .code {
     font-family: 'Roboto Mono', monospace;
     color: #e60d0d;
-    background-color: #ffa0a0;
+    background-color: #ffcdcd;
 }
 
 body {
@@ -22,7 +22,7 @@ body {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
-.card {
-    display: inline-block;
-    border: 1px solid red;
-}
+/* .card { */
+    /* display: inline-block; */
+    /* border: 1px solid red; */
+/* } */
