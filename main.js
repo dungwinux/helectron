@@ -1,90 +1,97 @@
-const electron = require('electron')
-const { app, BrowserWindow, Menu } = electron
-const path = require('path')
-const url = require('url')
+const electron = require("electron");
+const { app, BrowserWindow, Menu } = electron;
+const path = require("path");
+const url = require("url");
 
-let win
+let win;
 
 function createWindow() {
     win = new BrowserWindow({
-        width: 900,
+        width: 450,
         height: 600,
         show: false
-    })
-    win.loadURL(url.format({
-        pathname: path.join(__dirname, 'asset/index/index.html'),
-        protocol: 'file:',
-        slashes: true
-    }))
+    });
+    win.loadURL(
+        url.format({
+            pathname: path.join(__dirname, "asset/index/index.html"),
+            protocol: "file:",
+            slashes: true
+        })
+    );
     // win.webContents.openDevTools()
     // Menu.setApplicationMenu(null)
-    const mainMenu = Menu.buildFromTemplate(mainMenuTemplate)
-    Menu.setApplicationMenu(mainMenu)
+    const mainMenu = Menu.buildFromTemplate(mainMenuTemplate);
+    Menu.setApplicationMenu(mainMenu);
 
-    win.once('ready-to-show', () => {
-        win.show()
-    })
+    win.once("ready-to-show", () => {
+        win.show();
+    });
 
     // Emitted when the window is closed.
-    win.on('closed', () => {
-        win = null
-    })
+    win.on("closed", () => {
+        win = null;
+    });
 }
 
-app.on('ready', createWindow)
+app.on("ready", createWindow);
 
-app.on('window-all-closed', () => {
+app.on("window-all-closed", () => {
     // On macOS it is common for applications and their menu bar
     // to stay active until the user quits explicitly with Cmd + Q
-    if (process.platform !== 'darwin') {
-        app.quit()
+    if (process.platform !== "darwin") {
+        app.quit();
     }
-})
+});
 
-app.on('activate', () => {
+app.on("activate", () => {
     // On macOS it's common to re-create a window in the app when the
     // dock icon is clicked and there are no other windows open.
     if (win === null) {
-        createWindow()
+        createWindow();
     }
-})
+});
 
 const mainMenuTemplate = [
     {
-        label: 'Main',
+        label: "Main",
         submenu: [
             {
-                role: 'toggledevtools'
+                role: "toggledevtools"
             },
             {
-                type: 'separator'
+                type: "separator"
             },
             {
-                label: 'About',
+                label: "About",
                 click() {
                     let about = new BrowserWindow({
-                        width: 500,
-                        height: 500,
-                        title: 'About',
+                        width: 400,
+                        height: 570,
+                        title: "Helectron - About",
                         resizable: false,
                         alwaysOnTop: true,
                         frame: false,
                         modal: true,
                         parent: win
-                    })
-                    about.loadURL(url.format({
-                        pathname: path.join(__dirname, 'asset/about/about.html'),
-                        protocol: 'file:',
-                        slashes: true
-                    }))
+                    });
+                    about.loadURL(
+                        url.format({
+                            pathname: path.join(
+                                __dirname,
+                                "asset/about/about.html"
+                            ),
+                            protocol: "file:",
+                            slashes: true
+                        })
+                    );
                 }
             },
             {
-                type: 'separator'
+                type: "separator"
             },
             {
-                role: 'close'
+                role: "close"
             }
         ]
     }
-]
+];
