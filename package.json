@@ -27,7 +27,7 @@
             "icon": "build/icon.ico"
         },
         "linux": {
-            "target": "rpm",
+            "target": "AppImage",
             "icon": "build/icon.png",
             "category": "Utility"
         }
