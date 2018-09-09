@@ -33,7 +33,7 @@ function convertPlatform(arg)
     if (arg == 'aix') return "IBM AIX (Advanced Interactive Executive)";
     if (arg == "darwin") return "Mac OS";
     if (arg == "freebsd") return "FreeBSD";
-    if (arg == "linux") return "GNU/Linux";
+    if (arg == "linux") return "Linux";
     if (arg == "openbsd") return "OpenBSD";
     if (arg == "sunos") return "SunOS/Solaris";
     if (arg == "win32") return "Microsoft Windows";
