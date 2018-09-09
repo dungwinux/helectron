@@ -5,9 +5,8 @@ System Info Viewer
 ## Feature
 
 Current:
-- OS Viewer
-- CPU basic Info
-- Network Info
+- OS info 
+- CPU basic info
 
 ## Installing
 
