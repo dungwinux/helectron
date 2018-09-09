@@ -7,8 +7,8 @@ let win
 
 function createWindow() {
     win = new BrowserWindow({
-        width: 600,
-        height: 450,
+        width: 900,
+        height: 600,
         show: false
     })
     win.loadURL(url.format({
@@ -63,8 +63,8 @@ const mainMenuTemplate = [
                 label: 'About',
                 click() {
                     let about = new BrowserWindow({
-                        width: 320,
-                        height: 535,
+                        width: 500,
+                        height: 500,
                         title: 'About',
                         resizable: false,
                         alwaysOnTop: true,
