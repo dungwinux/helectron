@@ -2,20 +2,20 @@ const os = require('os')
 
 const hostName = os.hostname()
 
-const sysOs = os.type()
 const sysRelease = os.release()
 const sysEndian = (os.endianness() == "BE") ? "big endian" : "little endian"
 const tempDir = os.tmpdir();
 
 const sysCpuModel = os.cpus()[0].model
 const sysCpuCores = os.cpus().length
-const sysCpuArch = convertArch(process.arch)
+const sysCpuArch = convertArch(os.arch())
+const sysPlatform = convertPlatform(os.platform());
 const sysMemory = Math.floor(os.totalmem() / 1048576) // Convert to MiB
 var sysFreeMem = Math.floor(os.freemem() / 1048576) // Convert to MiB
+var sysUptime = timestr(os.uptime());
 setInterval(() => {
     sysFreeMem = Math.floor(os.freemem() / 1048576);
 }, 400) // update 
-var sysUptime = timestr(os.uptime());
 setInterval(() => {
     sysUptime = timestr(os.uptime());
 }, 400) // update
@@ -35,9 +35,8 @@ function convertArch(arg)
     return arg;
 }
 
-// attributed to github.com/NOVAglow
-
 /**
+ * attributed to github.com/NOVAglow
  Convert seconds to long format, from weeks down to seconds
 
  @param {integer} s Given number of seconds
@@ -72,4 +71,17 @@ function timestr(s) {
                                              : ""));
 
     return result;
+}
+
+function convertPlatform(arg)
+{
+    if (arg == 'aix') return "IBM AIX (Advanced Interactive Executive)";
+    if (arg == "darwin") return "Mac OS";
+    if (arg == "freebsd") return "FreeBSD";
+    if (arg == "linux") return "GNU/Linux";
+    if (arg == "openbsd") return "OpenBSD";
+    if (arg == "sunos") return "SunOS/Solaris";
+    if (arg == "win32") return "Microsoft Windows";
+    if (arg == "android") return "Android";
+    return arg;
 }

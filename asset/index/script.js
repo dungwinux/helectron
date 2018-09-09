@@ -1,7 +1,7 @@
 document.getElementById("hostname").innerHTML = hostName
 
-document.getElementById("ostype").innerHTML = sysOs
-if (sysOs == "Linux") document.querySelector("#linux-name").innerHTML = "Kernel"
+document.getElementById("ostype").innerHTML = sysPlatform
+if (sysPlatform.includes("Linux")) document.querySelector("#linux-name").innerHTML = "Kernel"
 
 document.getElementById("release").innerHTML = sysRelease
 
@@ -17,12 +17,13 @@ setInterval(() => {
 }, 500) // update
 setInterval(() => {
     document.getElementById("uptime").innerHTML = sysUptime;
-}, 500)
+}, 500) // update
 
 document.getElementById("username").innerHTML = currentUser["username"]
 document.getElementById("homedir").innerHTML = currentUser["homedir"] + '/'
 
-if (sysOs == "Windows_NT") document.querySelector("#posix-user").style.display = "none"
+if (sysPlatform.includes("Windows")) // if OS is Windows, this is irrelevant
+    document.querySelector("#posix-user").style.display = "none"
 else 
 {
     document.getElementById("username").setAttribute("class", "code")
