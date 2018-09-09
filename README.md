@@ -7,10 +7,13 @@ System Info Viewer
 Current:
 - OS info 
 - CPU basic info
+- User basic info
 
 ## Installing
 
 ### Prerequisite
+- Node.js
+- Node Package Manager
 - electron
 - electron-builder
 
