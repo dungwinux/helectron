@@ -3,9 +3,22 @@
     "version": "0.2.1",
     "description": "Helectron - System Info Viewer",
     "author": "Dung Nguyen Tuan <ntddebugger@gmail.com> (https://dungwinux.github.io)",
-    "license": "GPL-3.0",
+    "contributors": [
+        {
+            "name": "Vo Minh Duc",
+            "email": "minhducsun2002@gmail.com",
+            "url": "https://github.com/minhducsun2002"
+        }
+    ],
+    "license": "GPL-3.0-only",
+    "readme": "README.md",
     "main": "main.js",
     "repository": "https://github.com/dungwinux/helectron",
+    "homepage": "https://github.com/dungwinux/helectron",
+    "bugs": {
+        "email": "ntddebugger@gmail.com",
+        "url": "https://github.com/dungwinux/helectron/issues"
+    },
     "keywords": [
         "Electron",
         "system",
