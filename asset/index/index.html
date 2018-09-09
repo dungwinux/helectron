@@ -9,51 +9,53 @@
         <link href="styles.css" rel="stylesheet" type="text/css">
         <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     </head>
-    <body>
+    <body align="center">
         <div align="center" id="name">
             System Info Viewer
         </div>
-        <div id="container" class="card-deck card-columns-project">
-            <div class="card card-project" id="os">
-                <h5 class="card-title" align="center">
-                    OS informations
-                </h5>
-                <div class="card-text">
-                    Hostname : <span id="hostname" class="code"></span> <br>
-                    OS : <span id="ostype"></span> <br>
-                    <span id="linux-name">OS</span> release : <span id="release" class="code"></span> <br>
-                    Architecture : <span id="cpuArch"></span> <br>
-                    Uptime : <span id="uptime"></span> <br>
-                    Temporary directory : <span id="tempDirectory" class="code"></span> <br>
-                    System memory (RAM) : <span id="sysMemory"></span> MiB <br>
-                    Free memory : <span id="freeMemory"></span> MiB <br>
+        <div align="center" style="background-color:cadetblue;">
+            <div id="container" class="card-deck">
+                <div class="card shadow" id="os">
+                    <h5 class="card-header bg-secondary text-light" align="center">
+                        OS informations
+                    </h5>
+                    <div class="card-text">
+                        Hostname : <span id="hostname" class="code"></span> <br>
+                        OS : <span id="ostype"></span> <br>
+                        <span id="linux-name">OS</span> release : <span id="release" class="code"></span> <br>
+                        Architecture : <span id="cpuArch"></span> <br>
+                        Uptime : <span id="uptime"></span> <br>
+                        Temporary directory : <span id="tempDirectory" class="code"></span> <br>
+                        System memory (RAM) : <span id="sysMemory"></span> MiB <br>
+                        Free memory : <span id="freeMemory"></span> MiB <br>
+                    </div>
                 </div>
-            </div>
-            <div class="card card-project" id="hardware">
-                <h5 class="card-title" align="center">
-                    Hardware informations
-                </h5>
-                <div class="card-text"">
-                    CPU model : <span id="cpuModel"></span> <br>
-                    Number of threads : <span id="cpuCores"></span> <br>
-                    Endianness : <span id="cpuEndian"></span> <br>
+                <div class="card shadow" id="hardware">
+                    <h5 class="card-header bg-info text-white" align="center">
+                        Hardware informations
+                    </h5>
+                    <div class="card-text"">
+                        CPU model : <span id="cpuModel"></span> <br>
+                        Number of threads : <span id="cpuCores"></span> <br>
+                        Endianness : <span id="cpuEndian"></span> <br>
+                    </div>
                 </div>
-            </div>
-            <div class="card card-project" id="user">
-                <h5 class="card-title" align="center">
-                    User informations
-                </h5>
-                <div class="card-text">
-                    Current username : <span id="username"></span> <br>
-                    User's home directory : <span id="homedir" class="code"></span> <br>
-                    <div id="posix-user">
-                        UID : <span id="uid"></span> <br> 
-                        GID : <span id="gid"></span> <br> 
-                        Login shell : <span id="login-shell" class="code"></span> <br>
+                <div class="card shadow" id="user">
+                    <h5 class="card-header bg-success text-white" align="center">
+                        User informations
+                    </h5>
+                    <div class="card-text">
+                        Current username : <span id="username"></span> <br>
+                        User's home directory : <span id="homedir" class="code"></span> <br>
+                        <div id="posix-user">
+                            UID : <span id="uid"></span> <br> 
+                            GID : <span id="gid"></span> <br> 
+                            Login shell : <span id="login-shell" class="code"></span> <br>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div> 
+        <div> 
         </div>
         <script src="bootstrap/js/bootstrap.min.js"></script>
     </body>

@@ -13,6 +13,11 @@ body {
     margin: 0px;
 }
 
+#container {
+    padding-top: 10px;
+    width: 98%;
+}
+
 #name {
     padding-top: 10px;
     padding-bottom: 10px;
@@ -22,7 +27,6 @@ body {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
-/* .card { */
-    /* display: inline-block; */
-    /* border: 1px solid red; */
-/* } */
+.card-text {
+    margin-left: 5px;
+}
