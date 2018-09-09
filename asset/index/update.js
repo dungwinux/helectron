@@ -5,7 +5,7 @@ setInterval(() => {
 }, 400) // update 
 setInterval(() => {
     sysUptime = timestr(os.uptime());
-}, 400) // update
+}, 500) // update
 
 /**
  * attributed to github.com/NOVAglow
