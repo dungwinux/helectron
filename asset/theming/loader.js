@@ -26,6 +26,7 @@ if (folderPresent)
             }
             for (let i = 0 ; i < filesList.length ; i++)
             {
+                if (filesList[i].endsWith('css')) continue;
                 let out = document.createElement('link');
                 out.setAttribute('rel', 'stylesheet');
                 out.setAttribute('type', 'text/css');
