@@ -10,22 +10,18 @@ var head = document.querySelector('head');
 checkConfigDirAccessible();
 prepareConfigDir();
 
-if (folderPresent)
-{
+if (folderPresent) {
     checkStylesheetDirAccessible();
     if (!stylesheetsFolderPresent) prepareStylesheetDir();
-    if (stylesheetsFolderPresent)
-    {
+    if (stylesheetsFolderPresent) {
         // now we load all CSS here into app
         fs.readdir(extStyleDirectory, (err, filesList) => {
-            if (err)
-            {
+            if (err) {
                 console.log("Error reading custom stylesheets directory...");
                 console.log(err);
                 return;
             }
-            for (let i = 0 ; i < filesList.length ; i++)
-            {
+            for (let i = 0 ; i < filesList.length ; i++) {
                 if (!filesList[i].endsWith('css')) continue;
                 let out = document.createElement('link');
                 out.setAttribute('rel', 'stylesheet');
@@ -38,11 +34,9 @@ if (folderPresent)
     }
 }
 
-function checkConfigDirAccessible()
-{
+function checkConfigDirAccessible() {
     fs.access(configDirectory, fs.constants.R_OK, (err) => {
-        if (err)
-        {
+        if (err) {
             console.log ("Could not access config directory! Trying to create one...");
             folderPresent = false;
         }
@@ -52,18 +46,15 @@ function checkConfigDirAccessible()
 function checkStylesheetDirAccessible()
 {
     fs.access(extStyleDirectory, fs.constants.R_OK, (err) => {
-        if (err)
-        {
+        if (err) {
             console.log ("Could not access stylesheets directory! Trying to create one...");
             stylesheetsFolderPresent = false;
         }
     });
 }
 
-function prepareConfigDir()
-{
-    if (!folderPresent)
-    {
+function prepareConfigDir() {
+    if (!folderPresent) {
         folderPresent = true;
         fs.mkdir(configDirectory, (err) => {
             if (err)
@@ -75,14 +66,11 @@ function prepareConfigDir()
     }
 }
 
-function prepareStylesheetDir()
-{
-    if (!stylesheetsFolderPresent)
-    {
+function prepareStylesheetDir() {
+    if (!stylesheetsFolderPresent) {
         stylesheetsFolderPresent = true;
         fs.mkdir(configDirectory, (err) => {
-            if (err)
-            {
+            if (err) {
                 console.log("Could not create stylesheets directory!");
                 stylesheetsFolderPresent = false;
             }
