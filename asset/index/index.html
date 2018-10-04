@@ -28,8 +28,10 @@
                         Architecture : <span id="cpuArch"></span> <br>
                         Uptime : <span id="uptime"></span> <br>
                         Temporary directory : <span id="tempDirectory" class="code"></span> <br>
-                        System memory (RAM) : <span id="sysMemory"></span> MiB <br>
-                        Free memory : <span id="freeMemory"></span> MiB <br>
+                        Memory Usage (RAM) : 
+                        <div class="progress">
+                            <div class="progress-bar" id="memUsage" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
                     </div>
                 </div>
                 <div class="card shadow" id="hardware">

@@ -9,6 +9,10 @@ html {
     background-color: #ffcdcd;
 }
 
+.card {
+    min-width: 300px;
+}
+
 body {
     margin: 0px;
 }
@@ -30,7 +34,10 @@ body {
 .card-text {
     margin-left: 5px;
 }
-
+.progress {
+    height: 30px !important;
+    font-size: 1.2rem !important;
+}
 html {
     overflow: scroll;
     overflow-x: hidden;

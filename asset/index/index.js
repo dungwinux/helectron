@@ -19,10 +19,15 @@ async function cpuData() {
         sysCpuModel, sysCpuCores, sysCpuArch, sysCpuTemp,
     }
 }
+async function memData() {
+    const data = await si.mem()
+    data.free = Math.round(data.free / 1000000)
+    data.total = Math.round(data.total / 1000000)
+    const sysMemData = (({ free, total }) => ({ free, total }))(data);
+    return sysMemData
+}
 
 const sysPlatform = convertPlatform(os.platform())
-const sysMemory = Math.floor(os.totalmem() / 1048576) // Convert to MiB
-
 
 const currentUser = os.userInfo();
 

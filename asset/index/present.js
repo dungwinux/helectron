@@ -1,6 +1,7 @@
 async function setConstants()
 {
     const cpuDataBundle = await cpuData()
+    const memDataBundle = await memData()
     /*
         System params
     */
@@ -17,7 +18,6 @@ async function setConstants()
     document.getElementById("cpuEndian").innerHTML = sysEndian
 
     document.getElementById("tempDirectory").innerHTML = tempDir
-    document.getElementById("sysMemory").innerHTML = sysMemory
 
     /*
         User params
@@ -38,13 +38,27 @@ async function setConstants()
 
 function initializeUpdate()
 {
-    setInterval(() => {
-        document.getElementById("freeMemory").innerHTML = sysFreeMem;
-    }, 500) // update
+    initializeMemUpdate()
     setInterval(() => {
         document.getElementById("uptime").innerHTML = sysUptime;
     }, 500) // update    
 }
+async function getMemData() {
+    const memDataBundle = await memData()
+    
+    const free = memDataBundle.free;
+    const total = memDataBundle.total
+    const memUsage = document.getElementById("memUsage")
+    const percent = Math.round(100 - free / total * 100)
+    memUsage.setAttribute("aria-valuenow", total - free);
+    memUsage.style.width = percent+'%';
+    memUsage.setAttribute("aria-valuemax", total);
 
+    memUsage.innerHTML = `${free}MiB/${total}MiB (${percent}%)`
+    
+}
+let initializeMemUpdate = async () => {
+    await setInterval(getMemData, 500)
+}
 setConstants();
 initializeUpdate();
