@@ -59,7 +59,7 @@ async function getMemData() {
     memUsage.style.width = percent+'%';
     memUsage.setAttribute("aria-valuemax", total);
 
-    memUsage.innerHTML = `${free}MiB/${total}MiB (${percent}%)`
+    memUsage.innerHTML = `${total-free}MiB/${total}MiB (${percent}%)`
     
 }
 let initializeMemUpdate = async () => {
