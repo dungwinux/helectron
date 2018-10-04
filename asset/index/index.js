@@ -1,4 +1,5 @@
 const os = require('os')
+const si = require('systeminformation') 
 
 const hostName = os.hostname()
 
@@ -6,9 +7,19 @@ const sysRelease = os.release()
 const sysEndian = (os.endianness() == "BE") ? "big endian" : "little endian"
 const tempDir = os.tmpdir();
 
-const sysCpuModel = os.cpus()[0].model
-const sysCpuCores = os.cpus().length
-const sysCpuArch = convertArch(os.arch())
+
+async function cpuData() {
+    const sysCpuModel = os.cpus()[0].model
+    const sysCpuCores = os.cpus().length
+    const sysCpuArch = convertArch(os.arch())
+    const sysCpuTempData = await si.cpuTemperature()
+    let sysCpuTemp = sysCpuTempData.main
+    if(sysCpuTemp === -1) sysCpuTemp = 'Unsupported'
+    return {
+        sysCpuModel, sysCpuCores, sysCpuArch, sysCpuTemp,
+    }
+}
+
 const sysPlatform = convertPlatform(os.platform())
 const sysMemory = Math.floor(os.totalmem() / 1048576) // Convert to MiB
 

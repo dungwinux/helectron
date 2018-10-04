@@ -1,5 +1,6 @@
-function setConstants()
+async function setConstants()
 {
+    const cpuDataBundle = await cpuData()
     /*
         System params
     */
@@ -9,9 +10,10 @@ function setConstants()
     if (sysPlatform.includes("Linux")) document.querySelector("#linux-name").innerHTML = "Kernel"
 
     document.getElementById("release").innerHTML = sysRelease
-    document.getElementById("cpuModel").innerHTML = sysCpuModel
-    document.getElementById("cpuCores").innerHTML = sysCpuCores
-    document.getElementById("cpuArch").innerHTML = sysCpuArch
+    document.getElementById("cpuModel").innerHTML = cpuDataBundle.sysCpuModel
+    document.getElementById("cpuCores").innerHTML = cpuDataBundle.sysCpuCores
+    document.getElementById("cpuTemp").innerHTML = cpuDataBundle.sysCpuTemp
+    document.getElementById("cpuArch").innerHTML = cpuDataBundle.sysCpuArch
     document.getElementById("cpuEndian").innerHTML = sysEndian
 
     document.getElementById("tempDirectory").innerHTML = tempDir
