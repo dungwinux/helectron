@@ -19,12 +19,22 @@ async function cpuData() {
         sysCpuModel, sysCpuCores, sysCpuArch, sysCpuTemp,
     }
 }
+
 async function memData() {
     const data = await si.mem()
     data.free = Math.round(data.free / 1000000)
     data.total = Math.round(data.total / 1000000)
     const sysMemData = (({ free, total }) => ({ free, total }))(data);
     return sysMemData
+}
+
+async function gpuData() {
+    const data = await si.graphics()
+    const gpu0 = data.controllers[0]
+    return {
+        model: gpu0.vendor + ' ' + gpu0.model,
+        vram: gpu0.vram
+    }
 }
 
 const sysPlatform = convertPlatform(os.platform())

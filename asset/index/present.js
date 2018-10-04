@@ -2,6 +2,7 @@ async function setConstants()
 {
     const cpuDataBundle = await cpuData()
     const memDataBundle = await memData()
+    const gpuDataBundle = await gpuData()
     /*
         System params
     */
@@ -16,6 +17,10 @@ async function setConstants()
     document.getElementById("cpuTemp").innerHTML = cpuDataBundle.sysCpuTemp
     document.getElementById("cpuArch").innerHTML = cpuDataBundle.sysCpuArch
     document.getElementById("cpuEndian").innerHTML = sysEndian
+
+    document.getElementById("gpuModel").innerHTML = gpuDataBundle.model
+    document.getElementById("gpuVram").innerHTML = gpuDataBundle.vram +'mb'
+
 
     document.getElementById("tempDirectory").innerHTML = tempDir
 
