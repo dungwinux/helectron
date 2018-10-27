@@ -1,4 +1,5 @@
 const os = require('os')
+const si = require('systeminformation') 
 
 const hostName = os.hostname()
 
@@ -6,12 +7,37 @@ const sysRelease = os.release()
 const sysEndian = (os.endianness() == "BE") ? "big endian" : "little endian"
 const tempDir = os.tmpdir();
 
-const sysCpuModel = os.cpus()[0].model
-const sysCpuCores = os.cpus().length
-const sysCpuArch = convertArch(os.arch())
-const sysPlatform = convertPlatform(os.platform())
-const sysMemory = Math.floor(os.totalmem() / 1048576) // Convert to MiB
 
+async function cpuData() {
+    const sysCpuModel = os.cpus()[0].model
+    const sysCpuCores = os.cpus().length
+    const sysCpuArch = convertArch(os.arch())
+    const sysCpuTempData = await si.cpuTemperature()
+    let sysCpuTemp = sysCpuTempData.main
+    if(sysCpuTemp === -1) sysCpuTemp = 'Unsupported'
+    return {
+        sysCpuModel, sysCpuCores, sysCpuArch, sysCpuTemp,
+    }
+}
+
+async function memData() {
+    const data = await si.mem()
+    data.free = Math.round(data.free / 1000000)
+    data.total = Math.round(data.total / 1000000)
+    const sysMemData = (({ free, total }) => ({ free, total }))(data);
+    return sysMemData
+}
+
+async function gpuData() {
+    const data = await si.graphics()
+    const gpu0 = data.controllers[0]
+    return {
+        model: gpu0.vendor + ' ' + gpu0.model,
+        vram: gpu0.vram
+    }
+}
+
+const sysPlatform = convertPlatform(os.platform())
 
 const currentUser = os.userInfo();
 

@@ -46,6 +46,7 @@
         }
     },
     "dependencies": {
-        "ajv": "^6.5.3"
+        "ajv": "^6.5.3",
+        "systeminformation": "^3.45.6"
     }
 }

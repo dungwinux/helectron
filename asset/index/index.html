@@ -19,7 +19,7 @@
             <div id="container" class="card-deck">
                 <div class="card shadow" id="os">
                     <h5 class="card-header" align="center">
-                        OS informations
+                        OS info
                     </h5>
                     <div class="card-text">
                         Hostname : <span id="hostname" class="code"></span> <br>
@@ -28,23 +28,35 @@
                         Architecture : <span id="cpuArch"></span> <br>
                         Uptime : <span id="uptime"></span> <br>
                         Temporary directory : <span id="tempDirectory" class="code"></span> <br>
-                        System memory (RAM) : <span id="sysMemory"></span> MiB <br>
-                        Free memory : <span id="freeMemory"></span> MiB <br>
+                        Memory Usage (RAM) : 
+                        <div class="progress">
+                            <div class="progress-bar" id="memUsage" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
                     </div>
                 </div>
-                <div class="card shadow" id="hardware">
+                <div class="card shadow" id="CPU">
                     <h5 class="card-header" align="center">
-                        Hardware informations
+                        Processor (CPU) info
                     </h5>
                     <div class="card-text"">
                         CPU model : <span id="cpuModel"></span> <br>
                         Number of threads : <span id="cpuCores"></span> <br>
+                        Temperature: <span id="cpuTemp"></span><br>
                         Endianness : <span id="cpuEndian"></span> <br>
+                    </div>
+                </div>
+                <div class="card shadow" id="GPU">
+                    <h5 class="card-header" align="center">
+                        Graphics Processor (GPU) info
+                    </h5>
+                    <div class="card-text"">
+                        GPU model : <span id="gpuModel"></span> <br> 
+                        VRAM: <span id="gpuVram"></span><br>
                     </div>
                 </div>
                 <div class="card shadow" id="user">
                     <h5 class="card-header" align="center">
-                        User informations
+                        User info
                     </h5>
                     <div class="card-text">
                         Current username : <span id="username"></span> <br>
